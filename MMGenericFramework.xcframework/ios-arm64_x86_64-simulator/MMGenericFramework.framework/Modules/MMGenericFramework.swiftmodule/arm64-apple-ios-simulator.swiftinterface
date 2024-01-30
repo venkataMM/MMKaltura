@@ -1,0 +1,188 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios12.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MMGenericFramework
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AVKit
+import CommonCrypto
+import CoreTelephony
+import Foundation
+@_exported import MMGenericFramework
+import Swift
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc public class MMAssetInformation : ObjectiveC.NSObject, Swift.Codable {
+  public var assetURL: Swift.String!
+  public var assetID: Swift.String?
+  public var assetName: Swift.String?
+  public var videoId: Swift.String?
+  public var metafileURL: Foundation.URL?
+  public var customKVPs: [Swift.String : Swift.String]!
+  public var contentType: Swift.String?
+  public var drmProtection: Swift.String?
+  public var episodeNumber: Swift.String?
+  public var genre: Swift.String?
+  public var season: Swift.String?
+  public var seriesTitle: Swift.String?
+  @objc public init(assetURL aURL: Swift.String, assetID aId: Swift.String?, assetName aName: Swift.String?, videoId vId: Swift.String?)
+  @objc public init(assetURL aURL: Swift.String, assetID aId: Swift.String?, assetName aName: Swift.String?, videoId vId: Swift.String?, contyentType cType: Swift.String? = nil, drmProtection: Swift.String? = nil, episodeNumber eNumber: Swift.String? = nil, genre: Swift.String? = nil, season: Swift.String? = nil, seriesTitle: Swift.String? = nil)
+  @objc public func addCustomKVP(_ key: Swift.String, _ value: Swift.String)
+  @objc public func setQBRMode(_ mode: MMGenericFramework.MMQBRMode, withMetaURL metaURL: Foundation.URL?)
+  @objc public func setContentType(_ cType: Swift.String?)
+  @objc public func setDrmProtection(_ drmP: Swift.String?)
+  @objc public func setEpisodeNumber(_ eNumber: Swift.String?)
+  @objc public func setGenre(_ genre: Swift.String?)
+  @objc public func setSeason(_ season: Swift.String?)
+  @objc public func setSeriesTitle(_ sTitle: Swift.String?)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class GenericMMWrapper : ObjectiveC.NSObject, MMGenericFramework.MMSmartStreamingObserver {
+  @objc public func sessionInitializationCompleted(with status: MMGenericFramework.MMSmartStreamingInitializationStatus, andDescription description: Swift.String!, forCmdWithId cmdId: Swift.Int, nowtilusPermission enableNowtilus: Swift.Bool)
+  public func reportCustomMetadata(key: Swift.String, value: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum ReachabilityErrorMM : Swift.Error {
+  case FailedToCreateWithAddress(Darwin.sockaddr_in)
+  case FailedToCreateWithHostname(Swift.String)
+  case UnableToSetCallback
+  case UnableToSetDispatchQueue
+}
+public let ReachabilityChangedNotificationMM: Foundation.NSNotification.Name
+public class ReachabilityMM {
+  public typealias NetworkReachable = (MMGenericFramework.ReachabilityMM) -> ()
+  public typealias NetworkUnreachable = (MMGenericFramework.ReachabilityMM) -> ()
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable, reachableViaWiFi, reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: MMGenericFramework.ReachabilityMM.NetworkStatus, b: MMGenericFramework.ReachabilityMM.NetworkStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var whenReachable: MMGenericFramework.ReachabilityMM.NetworkReachable?
+  public var whenUnreachable: MMGenericFramework.ReachabilityMM.NetworkUnreachable?
+  public var reachableOnWWAN: Swift.Bool
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  public var currentReachabilityStatus: MMGenericFramework.ReachabilityMM.NetworkStatus {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability)
+  convenience public init?(hostname: Swift.String)
+  convenience public init?()
+  @objc deinit
+}
+extension MMGenericFramework.ReachabilityMM {
+  public func startNotifier() throws
+  public func stopNotifier()
+  public var isReachable: Swift.Bool {
+    get
+  }
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class MediaMelonKPPluginConfig : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public func setCustomerId(customerId: Swift.String)
+  public func getCustomerId() -> Swift.String
+  public func setDomainName(domainName: Swift.String)
+  public func getDomainName() -> Swift.String
+  public func setSubscriberTag(subscriberTag: Swift.String)
+  public func getSubscriberTag() -> Swift.String
+  public func setSubscriberId(subscriberId: Swift.String)
+  public func getSubscriberId() -> Swift.String
+  public func setSubscriberType(subscriberType: Swift.String)
+  public func getSubscriberType() -> Swift.String
+  public func setPlayerName(playerName: Swift.String)
+  public func getPlayerName() -> Swift.String
+  public func setPlayerVersion(playerVersion: Swift.String)
+  public func getPlayerVersion() -> Swift.String
+  public func setPlayerBrand(playerBrand: Swift.String)
+  public func getPlayerBrand() -> Swift.String
+  public func setPlayerModel(playerModel: Swift.String)
+  public func getPlayerModel() -> Swift.String
+  public func setAssetId(assetId: Swift.String)
+  public func getAssetId() -> Swift.String
+  public func setAssetName(assetName: Swift.String)
+  public func getAssetName() -> Swift.String
+  public func setVideoId(videoId: Swift.String)
+  public func getVideoId() -> Swift.String
+  public func setSeriesTitle(seriesTitle: Swift.String)
+  public func getSeriesTitle() -> Swift.String
+  public func setEpisodeNumber(episodeNumber: Swift.String)
+  public func getEpisodeNumber() -> Swift.String
+  public func setSeason(season: Swift.String)
+  public func getSeason() -> Swift.String
+  public func setContentType(contentType: Swift.String)
+  public func getContentType() -> Swift.String
+  public func setDrmProtection(drmProtection: Swift.String)
+  public func getDrmProtection() -> Swift.String
+  public func setGenre(genre: Swift.String)
+  public func getGenre() -> Swift.String
+  public func setAppName(appName: Swift.String)
+  public func getAppName() -> Swift.String
+  public func setAppVersion(appVersion: Swift.String)
+  public func getAppVersion() -> Swift.String
+  public func setDeviceMarketingName(deviceMarketingName: Swift.String)
+  public func getDeviceMarketingName() -> Swift.String
+  public func setVideoQuality(videoQuality: Swift.String)
+  public func getVideoQuality() -> Swift.String
+  public func setDeviceId(deviceId: Swift.String)
+  public func getDeviceId() -> Swift.String
+  public func addCustomTag(key: Swift.String, value: Swift.String)
+  public func getCustomTags() -> [Swift.String : Swift.String]
+  public func setDisableManifestFetch(disableManifestFetch: Swift.Bool)
+  public func getDisableManifestFetch() -> Swift.Bool
+  public func setHashSubscriberId(doHash: Swift.Bool)
+  public func getHashSubscriberId() -> Swift.Bool
+  @objc deinit
+}
+@objc public class MMRegistrationInformation : ObjectiveC.NSObject {
+  public var customerID: Swift.String!
+  public var component: Swift.String!
+  public var playerName: Swift.String!
+  public var domainName: Swift.String?
+  public var subscriberID: Swift.String?
+  public var hashSubscriberID: Swift.Bool!
+  public var subscriberType: Swift.String?
+  public var subscriberTag: Swift.String?
+  public var playerBrand: Swift.String?
+  public var playerModel: Swift.String?
+  public var playerVersion: Swift.String?
+  @objc public init(customerID cID: Swift.String, playerName pName: Swift.String)
+  @objc public func setDomain(_ dName: Swift.String?)
+  @objc public func setSubscriberInformation(subscriberID subsID: Swift.String?, subscriberType subsType: Swift.String?, subscriberTag subsTag: Swift.String?, hashSubscriberID hashSubID: Swift.Bool)
+  @objc public func setSubscriberInformation(subscriberID subsID: Swift.String?, subscriberType subsType: Swift.String?, subscriberTag subsTag: Swift.String?)
+  @objc public func setPlayerInformation(brand: Swift.String?, model: Swift.String?, version: Swift.String?)
+  @objc public func setComponentName(_ cName: Swift.String?)
+  @objc deinit
+}
+public enum MMOverridableMetrics {
+  case Latency, CDN, DurationWatched
+  public static func == (a: MMGenericFramework.MMOverridableMetrics, b: MMGenericFramework.MMOverridableMetrics) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension MMGenericFramework.ReachabilityMM.NetworkStatus : Swift.Equatable {}
+extension MMGenericFramework.ReachabilityMM.NetworkStatus : Swift.Hashable {}
+extension MMGenericFramework.MMOverridableMetrics : Swift.Equatable {}
+extension MMGenericFramework.MMOverridableMetrics : Swift.Hashable {}
