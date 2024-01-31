@@ -283,8 +283,8 @@ import MMGenericFramework
     }
 }
 
-class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
-    func sessionInitializationCompleted(with status: MMSmartStreamingInitializationStatus, andDescription description: String!, forCmdWithId cmdId: Int, nowtilusPermission enableNowtilus: Bool) {}
+public class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
+    public func sessionInitializationCompleted(with status: MMSmartStreamingInitializationStatus, andDescription description: String!, forCmdWithId cmdId: Int, nowtilusPermission enableNowtilus: Bool) {}
     
     private enum CurrentPlayerState {
         case IDLE,
