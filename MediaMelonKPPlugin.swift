@@ -13,10 +13,275 @@ import os
 #if os(iOS)
   import CoreTelephony
 #endif
-
-#if canImport(PlayKit)
 import PlayKit
 import MMGenericFramework
+
+@objc public class MediaMelonKPPluginConfig: NSObject {
+    
+    private var customerId: String = ""
+    private var domainName: String = ""
+    private var subscriberTag: String = ""
+    private var subscriberType: String = ""
+    private var subscriberId: String = ""
+    private var playerName: String = ""
+    private var playerVersion: String = ""
+    private var playerBrand: String = ""
+    private var playerModel: String = ""
+    private var assetId: String = ""
+    private var assetName: String = ""
+    private var videoId: String = ""
+    private var seriesTitle: String = ""
+    private var episodeNumber: String = ""
+    private var season: String = ""
+    private var contentType: String = ""
+    private var drmProtection: String = ""
+    private var genre: String = ""
+    private var appName: String = ""
+    private var appVersion: String = ""
+    private var deviceMarketingName: String = ""
+    private var videoQuality: String = ""
+    private var deviceId: String = ""
+    private var customTags: [String:String] = [:]
+    private var disableManifestFetch: Bool = false
+    private var doHash: Bool = true
+
+    public override init (){
+        self.customerId = ""
+        self.domainName = ""
+        self.subscriberTag = ""
+        self.subscriberType = ""
+        self.subscriberId = ""
+        self.playerName = ""
+        self.playerVersion = ""
+        self.playerBrand = ""
+        self.playerModel = ""
+        self.assetId = ""
+        self.assetName = ""
+        self.videoId = ""
+        self.seriesTitle = ""
+        self.episodeNumber = ""
+        self.season = ""
+        self.contentType = ""
+        self.drmProtection = ""
+        self.genre = ""
+        self.appName = ""
+        self.appVersion = ""
+        self.deviceMarketingName = ""
+        self.videoQuality = ""
+        self.deviceId = ""
+        self.disableManifestFetch = false
+        self.customTags = [:]
+        self.doHash = true
+    }
+    
+    public func setCustomerId(customerId: String) {
+        self.customerId = customerId
+    }
+    
+    public func getCustomerId() -> String {
+        return self.customerId
+    }
+    
+    public func setDomainName(domainName: String) {
+        self.domainName = domainName
+    }
+    
+    public func getDomainName() -> String {
+        return self.domainName
+    }
+    
+    public func setSubscriberTag(subscriberTag: String) {
+        self.subscriberTag = subscriberTag
+    }
+    
+    public func getSubscriberTag() -> String {
+        return self.subscriberTag
+    }
+    
+    public func setSubscriberId(subscriberId: String) {
+        self.subscriberId = subscriberId
+    }
+    
+    public func getSubscriberId() -> String {
+        return self.subscriberId
+    }
+    
+    public func setSubscriberType(subscriberType: String) {
+        self.subscriberType = subscriberType
+    }
+    
+    public func getSubscriberType() -> String {
+        return self.subscriberType
+    }
+    
+    public func setPlayerName(playerName: String) {
+        self.playerName = playerName
+    }
+    
+    public func getPlayerName() -> String {
+        return self.playerName
+    }
+    
+    public func setPlayerVersion(playerVersion: String) {
+        self.playerVersion = playerVersion
+    }
+    
+    public func getPlayerVersion() -> String {
+        return self.playerVersion
+    }
+    
+    public func setPlayerBrand(playerBrand: String) {
+        self.playerBrand = playerBrand
+    }
+    
+    public func getPlayerBrand() -> String {
+        return self.playerBrand
+    }
+    
+    public func setPlayerModel(playerModel: String) {
+        self.playerModel = playerModel
+    }
+    
+    public func getPlayerModel() -> String {
+        return self.playerModel
+    }
+    
+    public func setAssetId(assetId: String) {
+        self.assetId = assetId
+    }
+    
+    public func getAssetId() -> String {
+        return self.assetId
+    }
+    
+    public func setAssetName(assetName: String) {
+        self.assetName = assetName
+    }
+    
+    public func getAssetName() -> String {
+        return self.assetName
+    }
+    
+    public func setVideoId(videoId: String) {
+        self.videoId = videoId
+    }
+    
+    public func getVideoId() -> String {
+        return self.videoId
+    }
+    
+    public func setSeriesTitle(seriesTitle: String) {
+        self.seriesTitle = seriesTitle
+    }
+    
+    public func getSeriesTitle() -> String {
+        return self.seriesTitle
+    }
+    
+    public func setEpisodeNumber(episodeNumber: String) {
+        self.episodeNumber = episodeNumber
+    }
+    
+    public func getEpisodeNumber() -> String {
+        return self.episodeNumber
+    }
+    
+    public func setSeason(season: String) {
+        self.season = season
+    }
+    
+    public func getSeason() -> String {
+        return self.season
+    }
+    
+    public func setContentType(contentType: String) {
+        self.contentType = contentType
+    }
+    
+    public func getContentType() -> String {
+        return self.contentType
+    }
+    
+    public func setDrmProtection(drmProtection: String) {
+        self.drmProtection = drmProtection
+    }
+    
+    public func getDrmProtection() -> String {
+        return self.drmProtection
+    }
+    
+    public func setGenre(genre: String) {
+        self.genre = genre
+    }
+    
+    public func getGenre() -> String {
+        return self.genre
+    }
+    
+    public func setAppName(appName: String) {
+        self.appName = appName
+    }
+    
+    public func getAppName() -> String {
+        return self.appName
+    }
+    
+    public func setAppVersion(appVersion: String) {
+        self.appVersion = appVersion
+    }
+    
+    public func getAppVersion() -> String {
+        return self.appVersion
+    }
+    
+    public func setDeviceMarketingName(deviceMarketingName: String) {
+        self.deviceMarketingName = deviceMarketingName
+    }
+    
+    public func getDeviceMarketingName() -> String {
+        return self.deviceMarketingName
+    }
+    
+    public func setVideoQuality(videoQuality: String) {
+        self.videoQuality = videoQuality
+    }
+    
+    public func getVideoQuality() -> String {
+        return self.videoQuality
+    }
+    
+    public func setDeviceId(deviceId: String) {
+        self.deviceId = deviceId
+    }
+    
+    public func getDeviceId() -> String {
+        return self.deviceId
+    }
+    
+    public func addCustomTag(key: String, value: String) {
+        self.customTags[key] = value
+    }
+    
+    public func getCustomTags() -> [String:String] {
+        return self.customTags
+    }
+    
+    public func setDisableManifestFetch(disableManifestFetch: Bool) {
+        self.disableManifestFetch = disableManifestFetch
+    }
+    
+    public func getDisableManifestFetch() -> Bool {
+        return self.disableManifestFetch
+    }
+    
+    public func setHashSubscriberId(doHash: Bool) {
+        self.doHash = doHash
+    }
+    
+    public func getHashSubscriberId() -> Bool {
+        return self.doHash
+    }
+}
 
 class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
     func sessionInitializationCompleted(with status: MMSmartStreamingInitializationStatus, andDescription description: String!, forCmdWithId cmdId: Int, nowtilusPermission enableNowtilus: Bool) {}
@@ -584,5 +849,3 @@ class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
         super.destroy()
     }
 }
-
-#endif
