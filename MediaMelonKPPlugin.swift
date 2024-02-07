@@ -18,273 +18,228 @@ import MMGenericFramework
 
 @objc public class MediaMelonKPPluginConfig: NSObject {
     
-    private var customerId: String = ""
-    private var domainName: String = ""
-    private var subscriberTag: String = ""
-    private var subscriberType: String = ""
-    private var subscriberId: String = ""
-    private var playerName: String = ""
-    private var playerVersion: String = ""
-    private var playerBrand: String = ""
-    private var playerModel: String = ""
-    private var assetId: String = ""
-    private var assetName: String = ""
-    private var videoId: String = ""
-    private var seriesTitle: String = ""
-    private var episodeNumber: String = ""
-    private var season: String = ""
-    private var contentType: String = ""
-    private var drmProtection: String = ""
-    private var genre: String = ""
-    private var appName: String = ""
-    private var appVersion: String = ""
-    private var deviceMarketingName: String = ""
-    private var videoQuality: String = ""
-    private var deviceId: String = ""
-    private var customTags: [String:String] = [:]
-    private var disableManifestFetch: Bool = false
-    private var doHash: Bool = true
+    var params : [String: Any] = [
+        "customerId": "",
+        "domainName": "",
+        "subscriberTag": "",
+        "subscriberId": "",
+        "subscriberType": "",
+        "doHash": true,
+        "playerName": "",
+        "playerVersion": "",
+        "playerBrand": "",
+        "playerModel": "",
+        "assetId": "",
+        "assetName": "",
+        "videoId": "",
+        "seriesTitle": "",
+        "episodeNumber": "",
+        "season": "",
+        "contentType": "",
+        "genre": "",
+        "appName": "",
+        "appVersion": "",
+        "deviceMarketingName": "",
+        "videoQuality": "",
+        "deviceId": "",
+        "disableManifestFetch": false,
+        "customTags": [:]
+    ]
 
-    public override init (){
-        self.customerId = ""
-        self.domainName = ""
-        self.subscriberTag = ""
-        self.subscriberType = ""
-        self.subscriberId = ""
-        self.playerName = ""
-        self.playerVersion = ""
-        self.playerBrand = ""
-        self.playerModel = ""
-        self.assetId = ""
-        self.assetName = ""
-        self.videoId = ""
-        self.seriesTitle = ""
-        self.episodeNumber = ""
-        self.season = ""
-        self.contentType = ""
-        self.drmProtection = ""
-        self.genre = ""
-        self.appName = ""
-        self.appVersion = ""
-        self.deviceMarketingName = ""
-        self.videoQuality = ""
-        self.deviceId = ""
-        self.disableManifestFetch = false
-        self.customTags = [:]
-        self.doHash = true
-    }
-    
-    public func setCustomerId(customerId: String) {
-        self.customerId = customerId
+    public init (params: [String: Any]){
+        self.params = params
     }
     
     public func getCustomerId() -> String {
-        return self.customerId
-    }
-    
-    public func setDomainName(domainName: String) {
-        self.domainName = domainName
+        guard let value = self.params["customerId"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getDomainName() -> String {
-        return self.domainName
-    }
-    
-    public func setSubscriberTag(subscriberTag: String) {
-        self.subscriberTag = subscriberTag
+        guard let value = self.params["domainName"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getSubscriberTag() -> String {
-        return self.subscriberTag
-    }
-    
-    public func setSubscriberId(subscriberId: String) {
-        self.subscriberId = subscriberId
+        guard let value = self.params["subscriberTag"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getSubscriberId() -> String {
-        return self.subscriberId
-    }
-    
-    public func setSubscriberType(subscriberType: String) {
-        self.subscriberType = subscriberType
+        guard let value = self.params["subscriberId"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getSubscriberType() -> String {
-        return self.subscriberType
-    }
-    
-    public func setPlayerName(playerName: String) {
-        self.playerName = playerName
+        guard let value = self.params["subscriberType"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getPlayerName() -> String {
-        return self.playerName
-    }
-    
-    public func setPlayerVersion(playerVersion: String) {
-        self.playerVersion = playerVersion
+        guard let value = self.params["playerName"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getPlayerVersion() -> String {
-        return self.playerVersion
-    }
-    
-    public func setPlayerBrand(playerBrand: String) {
-        self.playerBrand = playerBrand
+        guard let value = self.params["playerVersion"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getPlayerBrand() -> String {
-        return self.playerBrand
-    }
-    
-    public func setPlayerModel(playerModel: String) {
-        self.playerModel = playerModel
+        guard let value = self.params["playerBrand"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getPlayerModel() -> String {
-        return self.playerModel
-    }
-    
-    public func setAssetId(assetId: String) {
-        self.assetId = assetId
+        guard let value = self.params["playerModel"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getAssetId() -> String {
-        return self.assetId
-    }
-    
-    public func setAssetName(assetName: String) {
-        self.assetName = assetName
+        guard let value = self.params["assetId"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getAssetName() -> String {
-        return self.assetName
-    }
-    
-    public func setVideoId(videoId: String) {
-        self.videoId = videoId
+        guard let value = self.params["assetName"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getVideoId() -> String {
-        return self.videoId
-    }
-    
-    public func setSeriesTitle(seriesTitle: String) {
-        self.seriesTitle = seriesTitle
+        guard let value = self.params["videoId"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getSeriesTitle() -> String {
-        return self.seriesTitle
-    }
-    
-    public func setEpisodeNumber(episodeNumber: String) {
-        self.episodeNumber = episodeNumber
+        guard let value = self.params["seriesTitle"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getEpisodeNumber() -> String {
-        return self.episodeNumber
-    }
-    
-    public func setSeason(season: String) {
-        self.season = season
+        guard let value = self.params["episodeNumber"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getSeason() -> String {
-        return self.season
-    }
-    
-    public func setContentType(contentType: String) {
-        self.contentType = contentType
+        guard let value = self.params["season"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getContentType() -> String {
-        return self.contentType
-    }
-    
-    public func setDrmProtection(drmProtection: String) {
-        self.drmProtection = drmProtection
-    }
-    
-    public func getDrmProtection() -> String {
-        return self.drmProtection
-    }
-    
-    public func setGenre(genre: String) {
-        self.genre = genre
+        guard let value = self.params["contentType"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getGenre() -> String {
-        return self.genre
-    }
-    
-    public func setAppName(appName: String) {
-        self.appName = appName
+        guard let value = self.params["genre"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getAppName() -> String {
-        return self.appName
-    }
-    
-    public func setAppVersion(appVersion: String) {
-        self.appVersion = appVersion
+        guard let value = self.params["appName"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getAppVersion() -> String {
-        return self.appVersion
-    }
-    
-    public func setDeviceMarketingName(deviceMarketingName: String) {
-        self.deviceMarketingName = deviceMarketingName
+        guard let value = self.params["appVersion"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getDeviceMarketingName() -> String {
-        return self.deviceMarketingName
-    }
-    
-    public func setVideoQuality(videoQuality: String) {
-        self.videoQuality = videoQuality
+        guard let value = self.params["deviceMarketingName"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getVideoQuality() -> String {
-        return self.videoQuality
-    }
-    
-    public func setDeviceId(deviceId: String) {
-        self.deviceId = deviceId
+        guard let value = self.params["videoQuality"] as? String else {
+            return ""
+        }
+        return value
     }
     
     public func getDeviceId() -> String {
-        return self.deviceId
+        guard let value = self.params["deviceId"] as? String else {
+            return ""
+        }
+        return value
     }
     
-    public func addCustomTag(key: String, value: String) {
-        self.customTags[key] = value
-    }
-    
-    public func getCustomTags() -> [String:String] {
-        return self.customTags
-    }
-    
-    public func setDisableManifestFetch(disableManifestFetch: Bool) {
-        self.disableManifestFetch = disableManifestFetch
+    public func getCustomTags() -> [String:Any] {
+        guard let value = self.params["customTags"] as? [String : Any] else {
+            return [:]
+        }
+        return value
     }
     
     public func getDisableManifestFetch() -> Bool {
-        return self.disableManifestFetch
-    }
-    
-    public func setHashSubscriberId(doHash: Bool) {
-        self.doHash = doHash
+        guard let value = self.params["disableManifestFetch"] as? Bool else {
+            return false
+        }
+        return value
     }
     
     public func getHashSubscriberId() -> Bool {
-        return self.doHash
+        guard let value = self.params["doHash"] as? Bool else {
+            return true
+        }
+        
+        return value
+    }
+    
+    public func setDrmProtection(drmProtection: String) {
+        self.params["drmProtection"] = drmProtection
+    }
+    
+    public func getDrmProtection() -> String {
+        guard let value = self.params["drmProtection"] as? String else {
+            return ""
+        }
+        return value
     }
 }
 
-public class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
-    public func sessionInitializationCompleted(with status: MMSmartStreamingInitializationStatus, andDescription description: String!, forCmdWithId cmdId: Int, nowtilusPermission enableNowtilus: Bool) {}
+class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
+    func sessionInitializationCompleted(with status: MMSmartStreamingInitializationStatus, andDescription description: String!, forCmdWithId cmdId: Int, nowtilusPermission enableNowtilus: Bool) {}
     
     private enum CurrentPlayerState {
         case IDLE,
@@ -495,11 +450,11 @@ public class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
         contentMetadata.seriesTitle = self.config.getSeriesTitle()
         contentMetadata.episodeNumber = self.config.getEpisodeNumber()
         
-        for (key, value) in self.config.getCustomTags() {
-            self.mmSmartStreaming.reportCustomMetadata(withKey: key, andValue: value)
-        }
-        
         mmSmartStreaming.initializeSession(with: modeToRequest, registrationUri: "https://register.mediamelon.com/mm-apis/register/", forManifest: self.contentURL, metaURL: "", contentMetadata: contentMetadata, for: self)
+        
+        for (key, value) in self.config.getCustomTags() {
+            self.mmSmartStreaming.reportCustomMetadata(withKey: key, andValue: String(describing: value))
+        }
     }
     
     private func reportUserInitiatedPlayback() {
@@ -842,6 +797,12 @@ public class MediaMelonKPPlugin: BasePlugin, MMSmartStreamingObserver {
     
     public override func onUpdateConfig(pluginConfig: Any) {
         super.onUpdateConfig(pluginConfig: pluginConfig)
+        
+        guard let config = pluginConfig as? MediaMelonKPPluginConfig else {
+            PKLog.error("Wrong config, could not setup mediamelon manager")
+            return
+        }
+        self.config = config
     }
     
     public override func destroy() {
